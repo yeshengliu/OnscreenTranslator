@@ -155,6 +155,18 @@ xcodebuild \
   build CODE_SIGNING_ALLOWED=NO
 ```
 
+## Build an unsigned IPA with GitHub Actions
+
+The **Build Unsigned IPA** workflow runs on pushes and pull requests, or
+manually from the repository's **Actions** tab with **Run workflow**. After a
+successful run, download the `OnscreenTranslator-unsigned-ipa` artifact from
+the workflow run. It contains `OnscreenTranslator-unsigned.ipa`.
+
+The workflow builds for a generic iOS device using the Xcode version on the
+GitHub-hosted macOS runner. The resulting IPA is unsigned and must be signed
+with a valid certificate and provisioning profile before it can be installed
+on an iPhone.
+
 ## Project structure
 
 ```text
